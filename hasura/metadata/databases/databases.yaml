@@ -1,0 +1,11 @@
+- name: maindb
+  kind: mssql
+  configuration:
+    connection_info:
+      connection_string:
+        from_env: MSSQL_DATABASE_URL
+      isolation_level: read-committed
+      pool_settings:
+        idle_timeout: 5
+        max_connections: null
+  tables: "!include maindb/tables/tables.yaml"
